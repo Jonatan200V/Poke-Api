@@ -1,0 +1,32 @@
+.header {
+  font-family: PokemonSolid;
+  background: $color-white;
+  &__ul {
+    @include flex(row, nowrap, space-between, center, 0);
+  }
+  &__div {
+    @include flex(row, nowrap, center, center, 1em);
+  }
+  &__li {
+    cursor: pointer;
+    position: relative;
+    background: red;
+  }
+  &__name {
+    color: $color-blue-pokemon;
+    font-weight: 900;
+    letter-spacing: px-to-em(3px);
+    font-size: 1.5em;
+  }
+
+  &__image {
+    object-fit: contain;
+  }
+  &__underline {
+    position: absolute;
+    bottom: 0;
+    height: 0.2em;
+    width: 100%;
+    background: $color-yellow;
+  }
+}

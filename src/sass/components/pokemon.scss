@@ -1,0 +1,24 @@
+.pokemon {
+  background: red;
+  // height: 100%;
+  // width: 100%;
+  place-self: center;
+
+  &__h2 {
+    text-transform: capitalize;
+    background: green;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    letter-spacing: px-to-em(2px);
+    color: $color-yellow;
+  }
+  &__figure {
+  }
+  &__image {
+    aspect-ratio: 9 / 16;
+    max-width: 20em;
+    max-height: 16em;
+    object-fit: contain;
+  }
+}

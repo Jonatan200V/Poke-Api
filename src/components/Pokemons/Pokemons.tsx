@@ -11,12 +11,13 @@ export default function Pokemons() {
   const { pokemon } = useAppSelector(STATE);
 
   return (
-    <div>
-      <section></section>
+    <div className="pokemons">
       {pokemon.pokemons.length > 0 ? (
-        pokemon.pokemons?.map(pokemon => (
-          <CardPokemon pokemon={pokemon} key={pokemon.id} />
-        ))
+        <section className="pokemons__section">
+          {pokemon.pokemons?.map(pokemon => (
+            <CardPokemon pokemon={pokemon} key={pokemon.id} />
+          ))}
+        </section>
       ) : (
         <Loading />
       )}

@@ -1,0 +1,294 @@
+@charset "UTF-8";
+@font-face {
+  font-family: FuturaTitle;
+  src: url("../../public/fonts/futura/FuturaBold.ttf");
+}
+@font-face {
+  font-family: GothamTitle;
+  src: url("../../public/fonts/Gotham-Font/Gotham-Bold.otf");
+}
+@font-face {
+  font-family: GothamLight;
+  src: url("../../public/fonts/Gotham-Font/GothamLight.ttf");
+}
+@font-face {
+  font-family: GothamMedium;
+  src: url("../../public/fonts/Gotham-Font/GothamMedium.ttf");
+}
+@font-face {
+  font-family: FuturaLight;
+  src: url("../../public/fonts/futura/FuturaLight.ttf");
+}
+@font-face {
+  font-family: Pokemon;
+  src: url("../../public/fonts/Pokemon/Pokemon.ttf");
+}
+@font-face {
+  font-family: PokemonSolid;
+  src: url("../../public/fonts/Pokemon/PokemonS.ttf");
+}
+/* Definimos las Custom properties */
+:root {
+  /* Colores */
+  --negro: #393939;
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+/* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.upercase {
+  text-transform: capitalize;
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  /* (Opcional) */
+  hyphens: auto;
+  /* (Opcional) */
+  font-smooth: always;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll; /* Esto hace que la barra de desplazamiento siempre esté presente */
+  scrollbar-width: none; /* Esto oculta la barra de desplazamiento */
+  font-family: PokemonSolid;
+  overflow-x: hidden;
+}
+
+select::-ms-expand {
+  display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
+  outline: none;
+  border: none;
+}
+
+select:focus {
+  outline: none;
+  border: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 #ffffff;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 0.375em;
+  width: 0.375em;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 1.25em;
+  background-color: #d4d4d4;
+  border: 0.125em solid #ffffff;
+}
+
+.pokemons__section {
+  max-width: 62.5em;
+  background: greenyellow;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(18.75em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18.75em, 1fr));
+  gap: 1em;
+}
+
+.pokemon {
+  background: red;
+  place-self: center;
+}
+.pokemon__h2 {
+  text-transform: capitalize;
+  background: green;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  letter-spacing: 0.125em;
+  color: #feca1b;
+}
+.pokemon__image {
+  aspect-ratio: 9/16;
+  max-width: 20em;
+  max-height: 16em;
+  object-fit: contain;
+}
+
+.header {
+  font-family: PokemonSolid;
+  background: #ffffff;
+}
+.header__ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.header__div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.header__li {
+  cursor: pointer;
+  position: relative;
+  background: red;
+}
+.header__name {
+  color: #3760a6;
+  font-weight: 900;
+  letter-spacing: 0.1875em;
+  font-size: 1.5em;
+}
+.header__image {
+  object-fit: contain;
+}
+.header__underline {
+  position: absolute;
+  bottom: 0;
+  height: 0.2em;
+  width: 100%;
+  background: #feca1b;
+}
+
+/*# sourceMappingURL=main.css.map */
