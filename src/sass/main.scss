@@ -1,4 +1,5 @@
-@import "./variables/variables.scss", "./fonts/fonts.scss",
-  "./functions/pxToEm.scss", "./mixins/mixin.scss", "./reset/reset.scss",
+@import "./functions/pxToEm.scss", "./variables/variables.scss",
+  "./fonts/fonts.scss", "./mixins/mixin.scss", "./reset/reset.scss",
   "./components/pokemons.scss", "./components/pokemon.scss",
-  "./components/header.scss";
+  "./components/pokedex.scss", "./components/header.scss",
+  "./pages/ppokedex.scss", "./data/data.scss", "./components/login.scss";

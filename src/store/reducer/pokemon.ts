@@ -5,12 +5,14 @@ import { Pokemon } from "@/types/types";
 
 interface StatePokemon {
   pokemons: Pokemon[];
-  count: number;
+  pokemon: Pokemon | null;
+  index: number | null;
 }
 
 const INITIAL_STATE: StatePokemon = {
   pokemons: [],
-  count: 0,
+  pokemon: null,
+  index: null,
 };
 
 const pokemonSlice = createSlice({
@@ -20,9 +22,16 @@ const pokemonSlice = createSlice({
     getPokemonsStore: (state, action: PayloadAction<Pokemon[]>) => {
       state.pokemons = action.payload;
     },
+    changePokemonPokedex: (state, action: PayloadAction<Pokemon>) => {
+      state.pokemon = action.payload;
+    },
+    addPokemon: (state, action: PayloadAction<Pokemon>) => {
+      state.pokemon = action.payload;
+    },
   },
 });
 
 export const STATE = (state: PokeState) => state;
-export const { getPokemonsStore } = pokemonSlice.actions;
+export const { getPokemonsStore, changePokemonPokedex, addPokemon } =
+  pokemonSlice.actions;
 export default pokemonSlice.reducer;

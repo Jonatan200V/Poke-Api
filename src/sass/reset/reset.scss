@@ -165,12 +165,13 @@ body {
   -webkit-font-smoothing: antialiased;
   /* (Opcional) */
   -moz-osx-font-smoothing: grayscale;
-  // color: #000;
-  // background: #fff;
-  overflow-y: scroll; /* Esto hace que la barra de desplazamiento siempre esté presente */
+  // overflow-y: scroll; /* Esto hace que la barra de desplazamiento siempre esté presente */
   scrollbar-width: none; /* Esto oculta la barra de desplazamiento */
-  font-family: PokemonSolid;
+  // font-family: PokemonSolid;
+  font-family: GothamLight;
   overflow-x: hidden;
+  position: relative;
+  background: #fb6a3e;
 }
 select::-ms-expand {
   display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
@@ -181,46 +182,25 @@ select:focus {
   outline: none;
   border: none;
 }
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #d4d4d4 #ffffff;
+.globs {
+  background: #feac1d;
+  border-radius: 50%;
+  height: 50em;
+  width: 50em;
+  position: fixed;
+  top: -10em;
+  right: -10em;
 }
-
-/* Chrome, Edge and Safari */
-*::-webkit-scrollbar {
-  width: px-to-em(6px);
-  width: px-to-em(6px);
+.globs:nth-child(2) {
+  top: 25em;
+  right: -20em;
+  background: #f47923;
+  opacity: 0.5;
 }
-// *::-webkit-scrollbar-track {
-//   border-radius: 0px;
-//   background-color: #ffffff;
-//   border: px-to-em(10px) solid transparent;
-// }
-
-// *::-webkit-scrollbar-track:hover {
-//   background-color: #ffffff;
-// }
-
-// *::-webkit-scrollbar-track:active {
-//   background-color: #ffffff;
-// }
-*::-webkit-scrollbar-thumb {
-  border-radius: px-to-em(20px);
-  background-color: #d4d4d4;
-  border: px-to-em(2px) solid #ffffff;
+.bottom {
+  width: 70em;
+  right: -5em;
+  top: 38.5em;
+  background: #f47923;
+  opacity: 0.4;
 }
-
-// *::-webkit-scrollbar-thumb:hover {
-//   background-color: #d4d4d4;
-// }
-
-// *::-webkit-scrollbar-thumb:active {
-//   background-color: #d4d4d4;
-// }
-// @include responsive(px-to-em(600px)) {
-//   *::-webkit-scrollbar {
-//     width: px-to-em(10px);
-//     width: px-to-em(10px);
-//   }
-// }

@@ -1,6 +1,6 @@
 .header {
   font-family: PokemonSolid;
-  background: $color-white;
+  background: transparent;
   &__ul {
     @include flex(row, nowrap, space-between, center, 0);
   }
@@ -10,7 +10,7 @@
   &__li {
     cursor: pointer;
     position: relative;
-    background: red;
+    // background: red;
   }
   &__name {
     color: $color-blue-pokemon;
