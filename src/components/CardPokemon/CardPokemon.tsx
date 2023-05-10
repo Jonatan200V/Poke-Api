@@ -10,6 +10,8 @@ interface Props {
   onChangePokemon: (poke: Pokemon, index: number) => void;
   index: number;
   viewImage: number | null;
+  image?: string;
+  incrementImage?: boolean;
 }
 
 export default function CardPokemon({
@@ -17,6 +19,8 @@ export default function CardPokemon({
   onChangePokemon,
   index,
   viewImage,
+  image,
+  incrementImage,
 }: Props) {
   const [hover, setHover] = useState<boolean>(false);
   const handleHoverStart = () => setHover(() => true);
@@ -33,7 +37,7 @@ export default function CardPokemon({
         {pokemon.types.map(({ type }) => (
           <img
             key={type.url}
-            src={`Types/${type.name}.png`}
+            src={`../../Types/${type.name}.png`}
             width={50}
             height={50}
             alt={type.name}
@@ -44,12 +48,13 @@ export default function CardPokemon({
       </div>
       <figure className="pokemon__figure" data-image={viewImage === index}>
         <motion.img
-          src={pokemon.sprites.other?.dream_world.front_default || ""}
+          src={image || pokemon.sprites.other?.dream_world.front_default || ""}
           alt={pokemon.name}
           layoutId={pokemon.sprites.other?.dream_world.front_default}
           variants={variantsCard}
           className="pokemon__image"
           animate={hover ? "imageHover" : "imageInitial"}
+          data-scale={incrementImage}
         />
       </figure>
       <motion.div

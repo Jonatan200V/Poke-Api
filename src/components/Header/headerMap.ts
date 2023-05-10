@@ -11,12 +11,12 @@ export enum LinksHeader {
 export const header: HeaderTypes[] = [
   {
     id: 1000,
-    link: "/juegos",
+    link: "/pokemons/juegos",
     name: LinksHeader.Juegos,
   },
   {
     id: 1001,
-    link: "/pokedex",
+    link: "/pokemons/pokedex",
     name: LinksHeader.Pokedex,
   },
 ];

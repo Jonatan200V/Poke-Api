@@ -1,0 +1,42 @@
+.nivel {
+  width: 100%;
+  background: yellow;
+  @include flex(row, nowrap, center, center, 0.5em);
+  &__container {
+    position: relative;
+    background: #ffffff;
+    border-radius: 1em;
+    border: px-to-em(2px) solid $color-blue;
+    width: 80%;
+    height: 1.3em;
+  }
+  &__background {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    background: $color-blue;
+    border-radius: 1em;
+  }
+  &__exp {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    color: #000;
+    font-weight: 900;
+    @include flex(row, nowrap, center, center, 0.5em);
+  }
+
+  &__nivel {
+    @include flex(row, nowrap, center, center, 0.5em);
+    background: $color-yellow;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    font-family: GothamTitle;
+    font-weight: bold;
+    border: px-to-em(2px) solid $color-blue-pokemon;
+  }
+}

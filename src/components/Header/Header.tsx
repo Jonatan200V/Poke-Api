@@ -23,7 +23,7 @@ export default function Header() {
     <header className="header">
       <nav>
         <ul className="header__ul">
-          <Link href={"/"}>
+          <Link href={"/pokemons"}>
             <li
               className="header__li"
               onClick={() => changePageUnderline(LinksHeader.Home)}

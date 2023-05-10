@@ -1,0 +1,43 @@
+.power {
+  position: relative;
+  // background: red;
+  cursor: pointer;
+
+  &__span {
+    position: absolute;
+    top: -0.5em;
+    width: 100%;
+    @include flex(row, nowrap, space-between, center, 0);
+  }
+  &__count {
+    border-radius: 50%;
+    height: 1.5em;
+    width: 1.5em;
+    background: $color-blue-pokemon;
+    @include flex(row, nowrap, center, center, 0);
+    font-weight: bold;
+    color: #fff;
+  }
+  &__info {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: -0.5em;
+    width: 22em;
+    padding: 0.5em;
+    background: $color-blue-pokemon;
+    color: $color-yellow;
+    border-radius: 0.5em;
+    opacity: 0;
+    transition: 0.5s ease;
+    &:hover {
+      background: #5374ad;
+    }
+  }
+  &__close {
+    text-align: left;
+  }
+  &__ {
+    pointer-events: none;
+  }
+}

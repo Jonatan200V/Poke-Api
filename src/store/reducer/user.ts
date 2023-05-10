@@ -6,14 +6,18 @@ export interface UserRegister {
   name: string;
   email: string;
   photo: string;
+  nivel: number;
+  exp: 0;
 }
 interface userStore {
   user: UserRegister | null;
   loading: boolean;
+  idUser: string | null;
 }
 const INITIAL_STATE: userStore = {
   user: null,
   loading: false,
+  idUser: null,
 };
 const userSlice = createSlice({
   name: "User",
@@ -21,6 +25,9 @@ const userSlice = createSlice({
   reducers: {
     loginUser: (state, action: PayloadAction<UserRegister>) => {
       state.user = action.payload;
+    },
+    getId: (state, action: PayloadAction<string>) => {
+      state.idUser = action.payload;
     },
   },
   extraReducers: builder => {
@@ -37,5 +44,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { loginUser } = userSlice.actions;
+export const { loginUser, getId } = userSlice.actions;
 export default userSlice.reducer;

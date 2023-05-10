@@ -1,0 +1,35 @@
+   {/* {state.gameOver && (
+              <>
+                {state.result && (
+                  <Confetti
+                    width={window.innerWidth}
+                    height={window.innerHeight}
+                    recycle={false}
+                    numberOfPieces={2000}
+                    onConfettiComplete={handleStopConfetti}
+                    run={!state.stopConfetti}
+                  />
+                )}
+              </>
+            )}
+            <div className="memory__modal">
+              {state.inGame ? (
+                <div className="memory__results">
+                  {state.gameOver && <p>{state.messageGameOver}</p>}
+                  <Results results={results} />
+                </div>
+              ) : (
+                <SelectDificulty changeDificulty={changeDificulty} />
+              )}
+              <div className="memory__buttons--options">
+                {!state.gameOver && <Play img={play} handleClick={playGame} />}
+                {state.inGame && (
+                  <button className="memory__reload" onClick={restart}>
+                    <Reload height={40} width={40} />
+                  </button>
+                )}
+              </div>
+            </div> */}
+
+
+const newVariable = 'Jonatan'            

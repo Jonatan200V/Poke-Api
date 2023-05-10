@@ -10,21 +10,28 @@ import // browserSessionPersistence,
 import { authFirebase } from "@/services/firebase";
 import { signInFacebookStore, signInGoogleStore } from "./googleAndFacebook";
 import usePersistSesion from "@/hooks/usePersistSesion";
+import { useRouter } from "next/navigation";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 
 interface ButtonsLogin {
   name: string;
   icon: JSX.Element;
   login: () => void;
 }
-
+export const redirectHome = (router: AppRouterInstance) => {
+  router.push("/pokemons");
+};
 export default function Left() {
   const dispatch = useAppDispatch();
+  const router = useRouter();
   usePersistSesion();
   const loginGoogle = async () => {
     await dispatch(signInGoogleStore());
+    redirectHome(router);
   };
   const loginFacebook = async () => {
     await dispatch(signInFacebookStore());
+    redirectHome(router);
   };
   const buttons: ButtonsLogin[] = [
     {

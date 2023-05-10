@@ -1,6 +1,9 @@
 .header {
   font-family: PokemonSolid;
   background: transparent;
+  position: relative;
+  z-index: 10;
+  // z-index: 25;
   &__ul {
     @include flex(row, nowrap, space-between, center, 0);
   }

@@ -1,0 +1,18 @@
+.aventure {
+  height: calc(100vh - 100px);
+  @include flex(row, wrap, center, center, 0.5em);
+  width: 100vw;
+  background: green;
+  &__pokemons {
+    @include flex(row, wrap, center, center, 0.5em);
+    height: 100%;
+    width: 100%;
+  }
+  &__you {
+    @include flex(column, wrap, flex-start, center, 0.5em) // height:overflow
+;
+    background: red;
+    flex-grow: 1;
+    height: 100%;
+  }
+}

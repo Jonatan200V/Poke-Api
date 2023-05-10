@@ -1,6 +1,8 @@
 .login {
   position: relative;
   @include flex(row, nowrap, center, center, 0);
+  height: 100vh;
+
   &__article {
     width: 50%;
   }

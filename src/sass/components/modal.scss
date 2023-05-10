@@ -1,0 +1,50 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  // filter: blur(1em);
+  backdrop-filter: blur(1em);
+  @include flex(column, nowrap, center, center, 0.5em);
+  z-index: 500;
+  &__select--pokemon {
+    opacity: 1;
+    transition: 0.5s ease;
+    pointer-events: auto;
+  }
+  &__fight {
+    width: 90%;
+    height: 90%;
+    background: white;
+  }
+  &__section {
+    border-radius: 0.5em;
+    width: 25em;
+    height: 20em;
+    background: $color-blue-pokemon;
+    // position: relative;
+  }
+  &__classic {
+    @include flex(column, nowrap, center, center, 0.5em);
+    background: white;
+    width: 40em;
+    height: 30em;
+    border-radius: 0.5em;
+  }
+  &__images {
+    @include flex(row, nowrap, center, center, 0.5em);
+  }
+  &__poke {
+    @include flex(column, nowrap, center, center, 0.5em);
+    cursor: pointer;
+  }
+  &__name {
+    text-transform: capitalize;
+  }
+  &__image {
+    object-fit: contain;
+  }
+}

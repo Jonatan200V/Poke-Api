@@ -2,7 +2,7 @@
   @include flex(row, nowrap, center, flex-start, 1em);
   &__section {
     max-width: px-to-em(1000px);
-    outline: 1px solid rgb(47, 144, 255);
+    // outline: 1px solid rgb(47, 144, 255);
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(px-to-em(300px), 1fr));
     grid-template-columns: repeat(auto-fit, minmax(px-to-em(300px), 1fr));

@@ -1,0 +1,38 @@
+.entrenadores {
+  @include flex(row, wrap, center, flex-start, 0.5em);
+  position: relative;
+  z-index: 20;
+  background: blue;
+  height: 90%;
+  flex-grow: 2;
+  &__container {
+    @include flex(column, wrap, center, center, 0.5em);
+    position: relative;
+  }
+  &__name {
+    text-transform: capitalize;
+    text-align: center;
+  }
+  &__pokemons {
+    background: #fff;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    position: absolute;
+    top: 100%;
+  }
+  &__pokemon {
+  }
+  &__combat {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transition: 0.5s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__types {
+    @include flex(row, wrap, center, center, 0.5em);
+  }
+}

@@ -1,3 +1,5 @@
+import { NameDificulty, Nivel } from "./enums";
+
 export interface Pokemon {
   abilities: Ability[];
   base_experience: number;
@@ -190,7 +192,7 @@ export interface Damage {
   moves: Generation[];
   name: string;
   names: Name[];
-  past_damage_relations: any[];
+  // past_damage_relations: any[];
   pokemon: Pokemon[];
 }
 
@@ -221,4 +223,14 @@ export interface Name {
 export interface Pokemon {
   pokemon: Generation;
   slot: number;
+}
+
+export interface Dificultad {
+  id: number;
+  dificultad: Nivel;
+  name: NameDificulty;
+}
+export interface GameOver {
+  message: string;
+  results: boolean;
 }

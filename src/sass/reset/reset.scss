@@ -45,7 +45,9 @@
 *::after {
   display: block;
 }
-
+* {
+  hyphens: none; //Probar para ver si no  se cortan las lineas
+}
 /* Evitamos problemas con las imagenes */
 img,
 picture,

@@ -16,7 +16,7 @@ interface State {
 }
 
 export default function Pokemons() {
-  usePokemon();
+  // usePokemon();
   const { pokemon } = useAppSelector(STATE);
   const [view, setView] = useState<State["view"]>(false);
   const [viewImage, setViewImage] = useState<State["index"]>(null);
@@ -38,7 +38,7 @@ export default function Pokemons() {
       {pokemon.pokemons.length > 0 ? (
         <AnimatePresence>
           <section className="pokemons__section">
-            {pokemon.pokemons.slice(0, 15)?.map((pokemon, index) => (
+            {pokemon.pokemons.slice(0, 100)?.map((pokemon, index) => (
               <CardPokemon
                 viewImage={viewImage}
                 index={index}

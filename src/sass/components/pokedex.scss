@@ -11,7 +11,7 @@
   &__top {
     height: 35%;
     background: transparent;
-    outline: 1px solid goldenrod #a8a1a1 #696969;
+    // outline: 1px solid goldenrod #a8a1a1 #696969;
     width: 100%;
     @include flex(column, nowrap, center, center, 0);
   }

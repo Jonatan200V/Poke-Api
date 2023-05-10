@@ -24,7 +24,6 @@ export default function RootLayout({
       <Provider store={store}>
         <body>
           <Background />
-          <Header />
           {children}
         </body>
       </Provider>
