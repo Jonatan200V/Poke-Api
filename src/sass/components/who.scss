@@ -1,0 +1,76 @@
+.who {
+  position: relative;
+  z-index: 15;
+  @include flex(row, nowrap, center, center, 0.5em);
+  height: calc(100vh - 100px);
+  &__section {
+    @include flex(column, nowrap, space-evenly, center, 0.5em);
+    height: 100%;
+    width: px-to-em(800px);
+  }
+  &__options {
+  }
+  &__tabs {
+    @include flex(column, nowrap, center, center, 0.5em);
+  }
+  &__card {
+    position: relative;
+    height: px-to-em(300px);
+    width: px-to-em(300px);
+    background: linear-gradient(
+      180deg,
+      #020024 0%,
+      $blue-fort 35%,
+      #00d4ff 100%
+    );
+    border-radius: 0.5em;
+    cursor: pointer;
+    @include flex(column, nowrap, center, center, 0);
+  }
+  &__image {
+    object-fit: contain;
+    width: 90%;
+    height: 90%;
+    filter: brightness(0%);
+    transition: 0.5s ease;
+    -webkit-user-drag: none;
+  }
+  &__names {
+    background: linear-gradient(
+      90deg,
+      #020024 0%,
+      $blue-fort 35%,
+      #00d4ff 100%
+    );
+    width: 8em;
+    height: 3em;
+    @include flex(row, wrap, center, center, 1em);
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 0.5em;
+    font-size: 1.15em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &__select {
+    // background: red;
+    border-radius: 0.5em;
+    border: 0.2em solid #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+  &__pokemonswho {
+    @include flex(row, nowrap, center, center, 0.5em);
+  }
+  &__pokeoptions {
+    @include flex(row, wrap, center, center, 0.5em);
+  }
+  &__play--stop {
+    @include flex(row, nowrap, center, center, 0.5em);
+  }
+  &__play {
+    @include flex(row, nowrap, center, center, 0.5em);
+  }
+}

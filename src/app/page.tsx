@@ -1,10 +1,13 @@
-import Pokemons from "@/components/Pokemons/Pokemons";
+"use client";
 import React from "react";
-
-export default async function page() {
+import "@/services/firebase";
+import Left from "@/components/Login/Left";
+import Right from "@/components/Login/Right";
+export default function page() {
   return (
-    <div>
-      <Pokemons />
-    </div>
+    <section className="login">
+      <Left />
+      <Right />
+    </section>
   );
 }

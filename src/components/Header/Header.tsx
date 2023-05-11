@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { LinksHeader, header, homeLinkImage } from "./headerMap";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useAppSelector } from "@/store/hooks";
+import HeaderlI from "./HeaderlI";
 
 interface State {
   underline: LinksHeader;
@@ -13,7 +15,7 @@ export default function Header() {
   const [selectPage, setSelectPage] = useState<State["underline"]>(
     LinksHeader.Home,
   );
-
+  const { user } = useAppSelector(state => state);
   const changePageUnderline = (name: LinksHeader) => {
     setSelectPage(name);
   };
@@ -21,7 +23,7 @@ export default function Header() {
     <header className="header">
       <nav>
         <ul className="header__ul">
-          <Link href={""}>
+          <Link href={"/pokemons"}>
             <li
               className="header__li"
               onClick={() => changePageUnderline(LinksHeader.Home)}
@@ -41,24 +43,15 @@ export default function Header() {
               )}
             </li>
           </Link>
+          {user && <li>{user.user?.email}</li>}
           <motion.div className="header__div">
             {header.map(link => (
-              <Link href={link.link}>
-                <li key={link.id} className="header__li">
-                  <div
-                    className="header__name"
-                    onClick={() => changePageUnderline(link.name)}
-                  >
-                    <span>{link.name}</span>
-                    {selectPage === link.name && (
-                      <motion.div
-                        className="header__underline"
-                        layoutId="underline"
-                      />
-                    )}
-                  </div>
-                </li>
-              </Link>
+              <HeaderlI
+                key={link.id}
+                link={link}
+                selectPage={selectPage}
+                changePageUnderline={changePageUnderline}
+              />
             ))}
           </motion.div>
         </ul>

@@ -1,0 +1,17 @@
+[data-image="true"] {
+  opacity: 0;
+}
+[data-info="true"] {
+  opacity: 1;
+}
+[data-adivine="true"] {
+  filter: brightness(100%);
+}
+[data-pokemon="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+[data-scale="true"] {
+  height: 30em;
+  width: 20em;
+}

@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { Pokemon, ResultsAllFetch } from "@/types/types";
 import { useAppDispatch } from "@/store/hooks";
-import { getPokemonsStore } from "@/store/reducer/pokemon";
+import {
+  createPokemonClassic,
+  getPokemonsStore,
+} from "@/store/reducer/pokemon";
 import { viewError } from "@/store/reducer/error";
 import { AppDispatch } from "@/store/store";
 
@@ -26,6 +29,7 @@ export default function usePokemon() {
             pokemons.map(pokemon => pokemon.json()),
           )) as Pokemon[];
           dispatch(getPokemonsStore(dataPokemons));
+          dispatch(createPokemonClassic());
         } catch (error) {
           const newError = error as Error;
 

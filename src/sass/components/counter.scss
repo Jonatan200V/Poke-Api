@@ -1,0 +1,24 @@
+.counter {
+  // background: rgb(0, 38, 255);
+  width: 8em;
+  height: 8em;
+  @include flex(row, nowrap, center, center, 0);
+  padding: 1em;
+  font-size: 1.5em;
+  border-radius: 50%;
+  border: 0.3em solid #fff;
+  font-weight: bold;
+
+  &__control {
+    height: 0.3em; // Altura de la línea
+    background: $color-blue-pokemon; // Color de la línea
+    position: absolute;
+    top: px-to-em(2px);
+    left: 0;
+    transition: 1s linear;
+    margin: 0 0 1em;
+  }
+  &__span {
+    font-size: 4em;
+  }
+}

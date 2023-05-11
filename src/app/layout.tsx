@@ -1,10 +1,12 @@
 "use client";
 import { store } from "@/store/store";
-import "./globals.css";
+// import "./globals.css";
 import "@/css/main.css";
 import { Inter } from "next/font/google";
 import { Provider } from "react-redux";
 import Header from "@/components/Header/Header";
+import Background from "@/components/Background/Background";
+// import "@/services/firebase";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -21,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <Provider store={store}>
         <body>
-          <Header />
+          <Background />
           {children}
         </body>
       </Provider>
